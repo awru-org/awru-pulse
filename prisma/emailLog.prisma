@@ -1,0 +1,9 @@
+model EmailLog {
+    id         String   @id @default(cuid())
+    userId     String
+    user       User     @relation(fields: [userId], references: [id])
+    sender     String
+    subject    String
+    preview    String?
+    notifiedAt DateTime @default(now())
+}
