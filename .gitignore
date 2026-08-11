@@ -8,6 +8,8 @@ dist/
 .env
 .env.local
 .env.*.local
+.env.example
+
 
 # Logs
 logs/
@@ -22,7 +24,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# /generated/prisma
+/generated/prisma
 
 .agents
 .claude
