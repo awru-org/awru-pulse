@@ -1,9 +1,6 @@
 import { Response } from 'express';
 import { ApiError, ApiSuccess, PaginationMeta } from '../types';
 
-/**
- * Send a standardised success response.
- */
 export function sendSuccess<T>(
   res: Response,
   message: string,
@@ -18,9 +15,7 @@ export function sendSuccess<T>(
   res.status(statusCode).json(body);
 }
 
-/**
- * Send a standardised error response.
- */
+
 export function sendError(
   res: Response,
   message: string,

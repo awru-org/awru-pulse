@@ -25,16 +25,13 @@ export const htmlToCleanText = (html: string): string => {
             },
         ],
     })
-        // Remove URLs that may still exist in the text
+
         .replace(/https?:\/\/\S+/gi, '')
 
-        // Remove invisible Unicode characters
         .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
 
-        // Remove excessive spaces
         .replace(/[ \t]+/g, ' ')
 
-        // Clean excessive newlines
         .replace(/\n\s*\n\s*\n+/g, '\n\n')
 
         .trim();

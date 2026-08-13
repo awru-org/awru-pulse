@@ -20,7 +20,6 @@ const server = app.listen(config.port, async () => {
   console.log(`   API base    : http://localhost:${config.port}/api/v1\n`);
 });
 
-// ── Graceful shutdown ──────────────────────────────────────────────────────────
 
 function gracefulShutdown(signal: string): void {
   console.log(`\n[${signal}] Shutting down gracefully...`);
@@ -29,7 +28,6 @@ function gracefulShutdown(signal: string): void {
     process.exit(0);
   });
 
-  // Force shutdown after 10 s if connections don't close naturally
   setTimeout(() => {
     console.error('Forcing shutdown after timeout.');
     process.exit(1);
@@ -39,7 +37,6 @@ function gracefulShutdown(signal: string): void {
 process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
 process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
-// ── Unhandled rejections ───────────────────────────────────────────────────────
 
 process.on('unhandledRejection', (reason: unknown) => {
   console.error('[UnhandledRejection]', reason);

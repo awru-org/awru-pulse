@@ -22,12 +22,12 @@ export const getEmailBody = (payload: any): string => {
 
     extract(payload);
 
-    // HTML থাকলে HTML থেকে clean text নাও
+
     if (html) {
         return htmlToCleanText(html);
     }
 
-    // HTML না থাকলে plain text clean করো
+
     return text
         .replace(/https?:\/\/\S+/gi, '')
         .replace(/[\u200B-\u200D\uFEFF\u00AD]/g, '')
