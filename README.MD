@@ -1,5 +1,7 @@
 <div align="center">
 
+![Status](https://img.shields.io/badge/status-coming%20soon%20to%20production-orange?style=for-the-badge)
+
 # ⚡ Awru Pulse
 
 **Your inbox, delivered to where you already are.**
@@ -41,10 +43,7 @@ Telegram Bot
     ▼
 📱 Instant notification
 ```
-
-
-
-## Status
+ ## Status
 
 🚧 Early access — single-user release in progress, multi-user support planned.
 
