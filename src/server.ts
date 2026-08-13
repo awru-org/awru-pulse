@@ -8,7 +8,6 @@ const app = createApp();
 const server = app.listen(config.port, async () => {
   await prisma.$connect();
   console.log(`✅ Database connected`);
-  console.log(`\n🚀  awru-pulse is running`);
 
 
   // await sendTelegramMessage('This is my first message is telegram bot!');

@@ -5,6 +5,7 @@ import loggerMiddleware from './middlewares/logger.middleware';
 import { globalErrorHandler, notFoundHandler } from './middlewares/error.middleware';
 import apiRouter from './routes';
 import config from './config';
+import GmailRouter from './modules/gmail/gmail.route';
 
 /**
  * Application factory — creates and configures the Express app.
@@ -34,8 +35,11 @@ function createApp(): Application {
   // ── HTTP request logging ────────────────────────────────────────────────────
   app.use(loggerMiddleware);
 
+
+
   // ── API routes ──────────────────────────────────────────────────────────────
   app.use('/api/v1', apiRouter);
+  app.use('/api/v1/gmail', GmailRouter)
 
   // ── 404 & global error handlers (always last) ───────────────────────────────
   app.use(notFoundHandler);
